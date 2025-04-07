@@ -54,7 +54,9 @@ export default function SectionHeader(props: SectionHeaderProps) {
             )}
             {!!titleSideActions && (
               <Box ml={1} justifyContent="center">
-                {titleSideActions}
+                {titleSideActions.map((item, idx) => {
+                  return <div key={`title-side-action-${idx}`}>{item}</div>;
+                })}
               </Box>
             )}
           </Box>
