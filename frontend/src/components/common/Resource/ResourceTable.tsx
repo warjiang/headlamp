@@ -453,7 +453,7 @@ function ResourceTableContent<RowItem extends KubeObject>(props: ResourceTablePr
         if (action.action === undefined || action.action === null) {
           return <MenuItem />;
         }
-        return action.action({ item: row.original, closeMenu });
+        return <div key={`${action.id}`}>{action.action({ item: row.original, closeMenu })}</div>;
       });
     };
   }, [actionsProcessed]);
