@@ -66,6 +66,7 @@ const SidebarItem = memo((props: SidebarItemProps) => {
         primary={fullWidth ? label : ''}
         icon={icon}
         name={label}
+        sidebarName={name}
         subtitle={subtitle}
         search={search}
         iconOnly={!fullWidth}
