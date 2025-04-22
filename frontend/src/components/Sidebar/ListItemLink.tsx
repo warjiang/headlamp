@@ -24,6 +24,7 @@ interface ListItemLinkProps {
   containerProps?: {
     [prop: string]: any;
   };
+  component?: React.ElementType;
 }
 
 const StyledLi = styled('li')<{ hasParent?: boolean }>(({ hasParent }) => ({
@@ -44,6 +45,7 @@ export default function ListItemLink(props: ListItemLinkProps) {
     subtitle,
     hasParent,
     fullWidth,
+    component,
     ...other
   } = props;
 
@@ -100,7 +102,7 @@ export default function ListItemLink(props: ListItemLinkProps) {
   return (
     <StyledLi hasParent={hasParent}>
       <ListItemButton
-        component={renderLink}
+        component={component ?? renderLink}
         {...other}
         sx={theme => ({
           color:
